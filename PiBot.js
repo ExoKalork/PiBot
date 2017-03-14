@@ -29,10 +29,15 @@ function postTweet() {
 			if (err) {
 				if (err.code === "ENOENT") {
 					console.log("There is no pi.txt file available. Please add one.");
-					return;
+					process.exit(1);
 				} else {
 					console.log(err);
 				}
+			}
+
+			if (!data[progress + config.decimals]) {
+				console.log("End of pi.txt reached ! Please provide a bigger file.");
+				process.exit(2);
 			}
 
 			for (var i = 0; i < config.decimals; i++) {
@@ -44,22 +49,17 @@ function postTweet() {
 				var status = {
 					status: decimals + " " + config.additional_text
 				};
-
-				console.log("");
-				console.log("progress : " + progress);
-				console.log("tweet : " + status.status);
-				console.log("");
-
-				console.log("/*Post tweet here*/");
-				/*acc.post('statuses/update', status, function (error, tweet, response) {
+				
+				acc.post('statuses/update', status, function (error, tweet, response) {
 					if (error) {
 						console.log(error);
 						console.log(status);
 					}
-				});*/
+				});
 			});
 		});
 	});
 }
 
 postTweet();
+setInterval(postTweet, config.interval);
