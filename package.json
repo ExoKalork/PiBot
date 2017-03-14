@@ -1,0 +1,22 @@
+{
+  "name": "pibot",
+  "version": "1.0.0",
+  "description": "Twitter Bot that posts pi decimals on a configurable timer.",
+  "main": "pibot.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExoKalork/PiBot.git"
+  },
+  "author": "Exorion",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ExoKalork/PiBot/issues"
+  },
+  "homepage": "https://github.com/ExoKalork/PiBot#readme",
+  "dependencies": {
+    "twitter": "^1.7.0"
+  }
+}
