@@ -1,0 +1,9 @@
+{
+  "consumer_key": "",
+  "consumer_secret": "",
+  "access_token_key": "",
+  "access_token_secret": "",
+  "interval": 3600000, // Milliseconds
+  "decimals": 50, // Obviously, 140 max
+  "additional_text": "#Pi" // Additional text at the end of a tweet
+}
