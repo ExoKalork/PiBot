@@ -10,9 +10,6 @@ var acc = new Twitter({
 });
 
 function postTweet() {
-	var progress = 0;
-	var decimals = "";
-
 	fs.readFile('progress.txt', 'utf8', function (err, data) {
 		if (err) {
 			if (err.code === "ENOENT") {
@@ -23,7 +20,7 @@ function postTweet() {
 			}
 		}
 
-		progress = parseInt(data, 10);
+		var progress = parseInt(data, 10);
 
 		fs.readFile('pi.txt', 'utf8', function (err, data) {
 			if (err) {
@@ -40,6 +37,7 @@ function postTweet() {
 				process.exit(2);
 			}
 
+			var decimals = "";
 			for (var i = 0; i < config.decimals; i++) {
 				decimals += data[progress + i];
 			}
@@ -49,7 +47,7 @@ function postTweet() {
 				var status = {
 					status: decimals + " " + config.additional_text
 				};
-				
+
 				acc.post('statuses/update', status, function (error, tweet, response) {
 					if (error) {
 						console.log(error);

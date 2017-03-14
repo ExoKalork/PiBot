@@ -4,6 +4,6 @@
   "access_token_key": "",
   "access_token_secret": "",
   "interval": 3600000, // Milliseconds
-  "decimals": 50, // Obviously, 140 max
+  "decimals": 50, // Obviously, 140 max (-additional_text and a space)
   "additional_text": "#Pi" // Additional text at the end of a tweet
-}
+} // Don't forget to remove comments, it won't work otherwise.
